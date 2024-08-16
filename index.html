@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Top Header -->
+     <div class="top-header">
+        <div class="left-logo">
+            <img src="images\logo-container.png" alt="Left Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="right-logo">
+            <img src="images\Frame 427319274.png" alt="Right Logo">
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link" data-target="home">
+                        <span class="material-icons-sharp">home</span>Home</a></li>
+                    <li><a href="#" class="nav-link" data-target="users">
+                        <span class="material-icons-sharp">group</span>Users</a></li>
+                    <li><a href="#" class="nav-link" data-target="config">
+                        <span class="material-icons-sharp">settings</span>Config</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#"><span class="material-icons-sharp">logout</span>Log Out</a>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content">
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <div class="box-container">
+                    <div class="box">Players: 0</div>
+                    <div class="box">Winners: 0</div>
+                    <div class="box">Losers: 0</div>
+                </div>
+                <div class="graph">
+                    <img src="images\graph-cards.png" alt="Right Logo">
+                    <!-- Graph will be here -->
+                </div>
+            </div>
+
+            <!-- Users Page -->
+            <div id="users" class="page">
+                <h3>Users List</h3>
+                <!-- Users table or list will be here -->
+            </div>
+
+            <!-- Config Page -->
+            <div id="config" class="page">
+                <nav class="config-nav">
+                    <button class="config-btn" data-config="winners">Winners</button>
+                    <button class="config-btn" data-config="prizes">Prizes</button>
+                    <button class="config-btn" data-config="themes">Themes</button>
+                </nav>
+                <div class="config-content">
+                    <div id="winners" class="config-page active">
+                        <label>Set Winners:</label>
+                        <input type="number">
+                        <label>Set Number of Winners:</label>
+                        <input type="number">
+                    </div>
+                    <div id="prizes" class="config-page">
+                        <label>Set Prizes:</label>
+                        <input type="number">
+                        <label>Set Number of Prizes:</label>
+                        <input type="number">
+                    </div>
+                    <div id="themes" class="config-page">
+                        <h3>Change Themes</h3>
+                        <!-- Theme options here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
