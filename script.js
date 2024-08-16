@@ -9,8 +9,12 @@ navLinks.forEach(link => {
         pages.forEach(page => {
             page.classList.remove('active');
         });
+        this.classList.add('active');
 
-        document.getElementById(target).classList.add('active');
+
+        setTimeout(() => {
+            document.getElementById(target).classList.add('active');
+        }, 200); 
     });
 });
 
@@ -31,6 +35,8 @@ configButtons.forEach(button => {
             page.classList.remove('active');
         });
 
-        document.getElementById(target).classList.add('active');
+        setTimeout(() => {
+            document.getElementById(target).classList.add('active');
+        }, 200); 
     });
 });

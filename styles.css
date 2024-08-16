@@ -77,16 +77,18 @@ body, html {
 
 /* Sidebar */
 .sidebar {
-    width: 10%;
-    height: 650px;
+    width: 15%;
+    height: 100%;
     background-color: #000000;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 80px 20px 20px 20px; /* Adjusted padding to account for the fixed top header */
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
     position: fixed;
-    top: 1cm; /* Position below the top header */
+    top: 56px; 
     bottom: 0;
 }
 
@@ -94,19 +96,31 @@ body, html {
     text-align: center;
 }
 
+nav {
+    width: 100%;
+    text-align: center;
+}
 nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
-    margin: 15px 0;
-}
+
 
 .nav-link {
+    width: 100%;
+    height: 46px;
     text-decoration: none;
     color: white;
     font-size: 18px;
+    transition: border 0.5s, background 0.5s;
+}
+
+.nav-link:hover, .nav-link.active {
+    width: 97%;
+    background-color: rgba(129, 124, 124, 0.5);
+    cursor: pointer;
+    border-left: 5px solid #FAC30F;
 }
 
 .logout {
@@ -131,6 +145,8 @@ nav ul li {
 
 .page {
     display: none;
+    animation: slideIn 0.8s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .page.active {
@@ -162,34 +178,59 @@ nav ul li {
 
 /* Config Page */
 .config-nav {
+    list-style-type: none;
+    width: 90%;
+    background-image: linear-gradient(to right, rgb(57, 54, 54) , rgb(90, 90, 70));
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .config-btn {
     padding: 10px 20px;
-    border: 1px solid #3498db;
-    background-color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    color: white;
+    transition: color 0.3s, font-size 0.4s;
 }
 
 .config-btn:hover, .config-btn.active {
-    background-color: #3498db;
-    color: white;
+   font-size: 17px;
+    color: #FAC30F;
 }
 
 .config-content {
     background-color: #ecf0f1;
-    padding: 20px;
+    padding: 60px;
     border-radius: 5px;
 }
 
 .config-page {
     display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: slideIn 0.8s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .config-page.active {
     display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
