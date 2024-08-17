@@ -1,34 +1,17 @@
-:root {
-    --color-primary: #7380ec;
-    --color-danger: #ff7782;
-    --color-success: #41f1b6;
-    --color-warning: #ffbb55;
-    --color-white: #fff;
-    --color-info-dark: #7d8da1;
-    --color-info-light: #dce1eb;
-    --color-dark: #363949;
-    --color-light: rgba(132, 139, 200, 0.18);
-    --color-primary-variant: #111e88;
-    --color-dark-variant: #677483;
-    --color-background: #f6f6f9;
-
-    --border-radius: 2rem;
-    --border-radius: 0.4rem;
-    --border-radius: 0.8rem;
-    --border-radius: 1.2rem;
-
-    --card-padding: 1.8rem;
-    --padding: 1.2rem;
-
-    --box-shadow: 0 2rem 3rem var(--color-light);
-    
-}
+@font-face {
+    font-family: 'Articulat-CF';
+    src: url('fonts/Fontspring-DEMO-articulatcf-normal-BF64a38d8b0cbaf.otf') format('woff2'),
+         url('fonts/Fontspring-DEMO-articulatcf-medium-BF64a38d8b06b0b.otf') format('woff'),
+         url('fonts/Fontspring-DEMO-articulatcf-bold-BF64a38d89ce81e.otf') format('truetype');
+    font-display: swap;
+    font-style: normal;
+  }
 
 /* General Styles */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Articulat-CF;
     height: 100%;
     box-sizing: border-box;
 }
@@ -44,52 +27,69 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #000000;
+    background-color: #1C1C1C;
     color: white;
     height: 56px;
-    padding: 10px, 16px, 10px, 16px;
+    padding: 10px 16px 10px 16px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-
-
 .right-logo {
-    margin-right: 30px;
+    padding-right: 20px;
 }
 
+/* General Styles for Search Bar */
 .search-bar {
-    flex-grow: 0.8;
     display: flex;
-    justify-content: center;
-}
-
-.search-bar input {
-    width: 50%;
+    align-items: center;
+    background-color: #323232;
     padding: 8px;
     border-radius: 8px;
-    border: none;
+    width: 472px;
+    height: 36px;
+    max-width: 400px; /* Maximum width of the search bar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.search-bar img {
+    width: 32px;
+    height: 20px;
+    margin-right: 10px; /* Space between the icon and the input field */
+}
+
+.search-bar input[type="text"] {
+    border: none; 
+    outline: none;
+    width: 100%; /* Full width for the input field */
+    background: none; /* Transparent background */
+    font-size: 16px; /* Font size for the text */
     color: #bab5b5;
-    background-color: #363949;
+}
+
+.search-bar input[type="text"]::placeholder {
+    font-size: 14px;
+    line-height: 20px;
+    color: #5a5555;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 15%;
-    height: 100%;
-    background-color: #000000;
-    color: white;
+    font-family: Articulat-CF;
+    font-weight: bold;
+    font-size: 19px;
+    width:240px;
+    height: 926px;
+    background-color: #1C1C1C;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    position: fixed;
+    padding: 32px 0px 32px 0px;
+    position: relative;
     top: 56px; 
-    bottom: 0;
+    
 }
 
 .logo {
@@ -109,22 +109,33 @@ nav ul {
 
 .nav-link {
     width: 100%;
-    height: 46px;
+    height: 48px;
     text-decoration: none;
-    color: white;
+    text-align: start;
+    padding-right: 30px;
+    padding: 5px 0 5px 30px;
+    color: #BABABA;
     font-size: 18px;
     transition: border 0.5s, background 0.5s;
 }
 
+.icon {
+    position: relative;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
 .nav-link:hover, .nav-link.active {
-    width: 97%;
-    background-color: rgba(129, 124, 124, 0.5);
+    width: 85%;
+    background-color: #323232;
     cursor: pointer;
     border-left: 5px solid #FAC30F;
+    animation: none;
 }
 
 .logout {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .logout a {
@@ -136,7 +147,7 @@ nav ul {
 /* Content */
 .content {
     width: 80%;
-    margin-left: 20%;
+    margin-left: 5%;
     padding: 80px 20px 20px 20px; /* Adjusted padding to account for the fixed top header */
     overflow-y: auto;
     position: relative;
@@ -167,13 +178,58 @@ nav ul {
     width: 25%;
     height: 100px;
     text-align: center;
+
+    font-size: 21px;
     border-radius: 5px;
-    box-shadow: 12px 12px 2px 1px rgba(29, 29, 91, 0.2);
 }
 
 .graph {
     padding: 20px;
     border-radius: 5px;
+}
+
+
+/* Users Table */
+
+.user-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.export-btn {
+    padding: 15px;
+    background-image: linear-gradient(to right, rgb(57, 54, 54) , rgb(90, 90, 70));
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+
+.users-table th, .users-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.users-table th {
+    background-image: linear-gradient(to right, rgb(57, 54, 54) , rgb(57, 57, 53));
+    color: white;
+}
+
+.users-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.users-table tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
 }
 
 /* Config Page */
@@ -198,10 +254,18 @@ nav ul {
 }
 
 .config-btn:hover, .config-btn.active {
-   font-size: 17px;
+   font-size: 19px;
     color: #FAC30F;
 }
 
+.winner-input, .prize-input {
+    width: 25%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    color: #bab5b5;
+    background-color: #363949;
+}
 .config-content {
     background-color: #ecf0f1;
     padding: 60px;
@@ -223,6 +287,107 @@ nav ul {
     transition: opacity 0.3s ease-in-out;
     transform: translateY(0);
 }
+
+/* Winner Form Styles */
+.winner-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.form-group1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group1 label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-group1 input[type="number"] {
+    width: 45%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    color: #bab5b5;
+    background-color: #363949;
+}
+
+button#select-winners-btn {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#select-winners-btn:hover {
+    background-color: #2980b9;
+}
+
+.winner-results {
+    margin-top: 30px;
+}
+
+.winner-results h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#winner-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#winner-list li {
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+
+
+/* Theme Form Styles */
+.theme-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 19px;
+    color: rgb(51, 46, 46);
+    font-size: 16px;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.preview-image {
+    max-width: 300px;
+    max-height: 200px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
 
 @keyframes slideIn {
     from {

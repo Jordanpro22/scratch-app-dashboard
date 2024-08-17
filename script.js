@@ -1,20 +1,27 @@
 // Page Navigation
 const navLinks = document.querySelectorAll('.nav-link');
 const pages = document.querySelectorAll('.page');
+let currentActiveLink = null;
 
 navLinks.forEach(link => {
     link.addEventListener('click', function() {
         const target = this.getAttribute('data-target');
 
+        if (currentActiveLink) {
+            currentActiveLink.classList.remove('active');
+        }
+
+        // Set current active link
+        currentActiveLink = this;
+        this.classList.add('active');
+
         pages.forEach(page => {
             page.classList.remove('active');
         });
-        this.classList.add('active');
-
 
         setTimeout(() => {
             document.getElementById(target).classList.add('active');
-        }, 200); 
+        }, 100); 
     });
 });
 
@@ -37,6 +44,9 @@ configButtons.forEach(button => {
 
         setTimeout(() => {
             document.getElementById(target).classList.add('active');
-        }, 200); 
+        }, 100); 
     });
 });
+
+
+ 
