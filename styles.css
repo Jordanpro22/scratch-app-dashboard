@@ -23,22 +23,21 @@ body, html {
 }
 
 /* Top Header */
-.top-header {
+.header-styles {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1C1C1C;
-    color: white;
+    background: #1c1c1c;
     padding: 10px 16px 10px 16px;
+    z-index: 10;
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000;
 }
 
 .right-logo {
     padding-right: 20px;
 }
+
 
 /* General Styles for Search Bar */
 .search-bar {
@@ -54,7 +53,7 @@ body, html {
 .search-bar img {
     width: 32px;
     height: 20px;
-    margin-right: 10px; /* Space between the icon and the input field */
+    margin-right: 10px; 
 }
 
 .search-bar input[type="text"] {
