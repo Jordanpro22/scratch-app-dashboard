@@ -69,7 +69,7 @@ body, html {
 .search-bar input[type="text"]::placeholder {
     font-size: 14px;
     line-height: 20px;
-    color: #5a5555;
+    color: #5E5E5E;
 }
 
 /* Sidebar */
@@ -84,7 +84,7 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     padding: 32px 0px 32px 0px;
-    position: relative;
+    position: fixed;
     top: 56px; 
     
 }
@@ -105,7 +105,7 @@ nav ul {
 
 
 .nav-link {
-    width: 100%;
+    width: 86%;
     height: 48px;
     text-decoration: none;
     text-align: start;
@@ -117,13 +117,12 @@ nav ul {
 }
 
 .icon {
-    position: relative;
     padding-right: 10px;
     margin-top: 10px;
 }
 
 .nav-link:hover, .nav-link.active {
-    width: 85%;
+    width: 84%;
     background-color: #323232;
     cursor: pointer;
     border-left: 5px solid #FAC30F;
@@ -132,7 +131,7 @@ nav ul {
 
 .logout {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .logout a {
@@ -149,6 +148,7 @@ nav ul {
     overflow-y: auto;
     position: relative;
     top: 1cm; /* Start below the top header */
+    margin-left: 300px;
 }
 
 .page {
@@ -175,6 +175,9 @@ nav ul {
     width: 25%;
     height: 100px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-size: 21px;
     border-radius: 5px;
@@ -335,6 +338,53 @@ button#select-winners-btn:hover {
     font-size: 18px;
 }
 
+
+
+
+#registerPrice{
+    display: flex;
+    justify-content: space-between;
+
+} 
+.forme input[type="text"] {
+    padding: 8px;
+    border: black 2px solid; 
+    outline: none;
+    width: 100%; /* Full width for the input field */
+    background: transparent; /* Transparent background */
+    font-size: 20px; /* Font size for the text */
+    color: #242424;
+    padding: 8px 20px;
+}
+.forme input[type="number"] {
+    padding: 8px;
+    border: black 2px solid; 
+    padding: 8px 20px;
+    outline: none;
+    width: 100%; /* Full width for the input field */
+    background: transparent; /* Transparent background */
+    font-size: 20px; /* Font size for the text */
+    color: #242424;
+}
+.buto{
+    width: 150px;
+    height: 60px;
+    background-color: #242424;
+    color: white;
+    font-style: 26px;
+}
+.fils{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: black 2px solid; 
+    padding: 8px 20px;
+    outline: none;
+    width: 100%; /* Full width for the input field */
+    background: transparent; /* Transparent background */
+    font-size: 20px; /* Font size for the text */
+    color: #242424;
+}
 
 
 /* Theme Form Styles */
