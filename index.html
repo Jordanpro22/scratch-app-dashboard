@@ -278,12 +278,17 @@
                             <ul id="winner-list"></ul>
                         </div>
                     </div>
-                    <div id="prizes" class="config-page">
-                        <label>Set Prizes:</label>
-                        <input class="prize-input" type="number">
-                        <label>Set Number of Prizes:</label>
-                        <input class="prize-input" type="number">
-                    </div>
+                    <form action="post" id="registerPrice">
+                        <div id="prizes" class="config-page">
+                            <label>Set Prizes:</label>
+                            <input id="name" class="prize-input" type="text" name="name">
+                            <label>Set Number of Prizes:</label>
+                            <input id="number_price" class="prize-input" type="number" name="number_price">
+                            <input id="img" class="prize-input" type="file" name="img">
+                            <button type="submit"> enregistrer</button>
+                        </div>
+                    </form>                    
+
                     <!-- Themes Page -->
 <div id="themes" class="config-page">
     <h3>Theme Configuration</h3>

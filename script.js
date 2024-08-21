@@ -48,9 +48,7 @@ configButtons.forEach(button => {
     });
 });
 
-
- 
-document.getElementById("registerPrice").addEventListener("submit", async function(event) {
+async function submitPrice(event) {
   event.preventDefault(); 
   const formData = new FormData();
   formData.append('name', document.getElementById("name").value);
@@ -79,7 +77,9 @@ document.getElementById("registerPrice").addEventListener("submit", async functi
   } catch (error) {
     alert("Une erreur s'est produite pendant l'enregistrement.");
   }
-});
+}
+ 
+document.getElementById("registerPrice").addEventListener("submit", submitPrice);
 
 
 
