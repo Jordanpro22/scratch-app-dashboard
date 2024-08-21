@@ -278,16 +278,38 @@
                             <ul id="winner-list"></ul>
                         </div>
                     </div>
-                    <form action="post" id="registerPrice">
-                        <div id="prizes" class="config-page">
-                            <label>Set Prizes:</label>
-                            <input id="name" class="prize-input" type="text" name="name">
-                            <label>Set Number of Prizes:</label>
-                            <input id="number_price" class="prize-input" type="number" name="number_price">
-                            <input id="img" class="prize-input" type="file" name="img">
-                            <button type="submit"> enregistrer</button>
-                        </div>
-                    </form>                    
+ 
+                    <div id="prizes" class="config-page">
+                        <form action="post" id="registerPrice">
+                            <div class="forme">
+                                <div>
+                                    <label>Set Prizes:</label>                              
+                                </div>
+                                <div>
+                                    <input id="name" class="prize-input" type="text" name="name">
+                                </div>       
+                            </div>
+                            <div class="forme">
+                                <div>
+                                    <label>Set Number of Prizes:</label>
+                                </div>
+                                <div>
+                                    <input id="number_price" class="prize-input" type="number" name="number_price">
+                                </div>     
+                            </div>
+                            <div class="forme">
+                                <div><label>selection une image</label></div>
+                                <div><input id="img" class="prize-input fils" type="file" name="img"></div>
+                            </div>
+                            <div class="forme">
+                                <div></div><br>
+                                <div>
+                                    <button class="buto" type="submit"> enregistrer</button>
+                                </div>
+                            </div>
+ 
+                        </form>
+                    </div>                   
 
                     <!-- Themes Page -->
 <div id="themes" class="config-page">
