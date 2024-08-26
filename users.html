@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="users" class="page">
+    <div class="user-header">
+        <div class="user-button">
+          <h3>Users List</h3>
+          <button class="export-btn">Export</button>
+        </div>
+    </div>
+    <div class="users-table-container" style="overflow-x: auto;">
+        <table id="usersTable" class="users-table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Téléphone</th>
+                    <th>Age</th>
+                    <th>Sexe</th>
+                    <th>Produit Achete</th>
+                    <th>Type Client</th>
+                    <th>Partenaire Phone</th>
+                    <th>Type Partenaire</th>
+                    <th>Localisation</th>
+                    <th>Montant Commande</th>
+                    <th>Statut Client</th>
+                    <th>IsWinner</th>
+                    <th>GameDay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+<script src="scripts/script.js"></script>
+</html>

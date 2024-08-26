@@ -72,6 +72,13 @@ body, html {
     color: #5E5E5E;
 }
 
+
+.highlight {
+    background-color: #FAC30F;
+    font-weight: bold;
+}
+
+
 /* Sidebar */
 .sidebar {
     font-family: Articulat-CF;
@@ -200,6 +207,7 @@ nav ul {
 .export-btn {
     padding: 15px;
     background-image: linear-gradient(to right, rgb(57, 54, 54) , rgb(90, 90, 70));
+    color: white;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -298,7 +306,7 @@ nav ul {
 .form-group1 {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
 }
 
 .form-group1 label {
@@ -310,28 +318,33 @@ nav ul {
     width: 45%;
     padding: 8px;
     border-radius: 8px;
-    border: none;
-    color: #bab5b5;
-    background-color: #363949;
+    border: 2px solid #1C1C1C;
+    color: #1C1C1C;
+    background-color: transparent;
 }
 
 button#select-winners-btn {
     padding: 10px;
-    background-color: #3498db;
+    background-color:#1C1C1C;
+    width: 250px;
     color: white;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.8s;
 }
 
 button#select-winners-btn:hover {
-    background-color: #2980b9;
+    background-color: #3e3d3d;
+    scale: 0.9;
+    transition: 0.8s;
 }
 
 .winner-results {
     margin-top: 30px;
 }
+
 
 .winner-results h4 {
     margin-bottom: 15px;
@@ -341,50 +354,61 @@ button#select-winners-btn:hover {
 
 
 
+
 #registerPrice{
-    display: flex;
-    justify-content: space-between;
+    grid-template-areas:
+    "a a a a";
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
 
 } 
-.forme input[type="text"] {
+.forme input {
     padding: 8px;
-    border: black 2px solid; 
+    border: #1C1C1C 2px solid; 
     outline: none;
-    width: 100%; /* Full width for the input field */
+    width: 75%; /* Full width for the input field */
     background: transparent; /* Transparent background */
     font-size: 20px; /* Font size for the text */
-    color: #242424;
-    padding: 8px 20px;
+    color: #1C1C1C;
+    padding: 5px 15px;
 }
-.forme input[type="number"] {
-    padding: 8px;
-    border: black 2px solid; 
-    padding: 8px 20px;
-    outline: none;
-    width: 100%; /* Full width for the input field */
-    background: transparent; /* Transparent background */
-    font-size: 20px; /* Font size for the text */
-    color: #242424;
-}
+
+
 .buto{
     width: 150px;
-    height: 60px;
-    background-color: #242424;
+    height: 50px;
+    background-color: #1C1C1C;
+    border-radius: 7px;
     color: white;
     font-style: 26px;
+    cursor: pointer;
+    transition: 0.8s;
 }
-.fils{
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    border: black 2px solid; 
-    padding: 8px 20px;
-    outline: none;
-    width: 100%; /* Full width for the input field */
-    background: transparent; /* Transparent background */
-    font-size: 20px; /* Font size for the text */
-    color: #242424;
+
+.buto:hover {
+    background-color: #3e3d3d;
+    scale: 0.9;
+    transition: 0.8s;
 }
+
+
+.prizes-body {
+    width: 1%;
+}
+
+.prizesTableContainer {
+    margin-left: 20%;
+}
+
+
+input::file-selector-button {
+    background-color: rgb(209, 208, 208);
+    border-radius: 7px;
+    font-size: 14px;
+    height: 23px;
+  }
 
 
 /* Theme Form Styles */
@@ -397,7 +421,7 @@ button#select-winners-btn:hover {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
 }
 
 .form-group label {
@@ -410,6 +434,11 @@ button#select-winners-btn:hover {
 .form-group input[type="file"] {
     padding: 5px;
     font-size: 16px;
+    width: 45%;
+    border-radius: 8px;
+    border: 2px solid #1C1C1C;
+    color: #1C1C1C;
+    background-color: transparent;
 }
 
 

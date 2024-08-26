@@ -16,7 +16,7 @@
             </div>
             <div class="search-bar">
                 <img src="images\search-icon.svg" class="image">
-                <input type="text" placeholder="Recherche">
+                <input type="text" id="dashboardSearch" placeholder="Recherche">
             </div>
             <div class="right-logo">
                 <img src="images\Frame 427319274.svg" alt="Right Logo">
@@ -38,7 +38,7 @@
                 </ul>
             </nav>
             <div class="logout">
-                <a href="#"><span class="material-icons-sharp">logout</span>Log Out</a>
+                <a href="login.html"><span class="material-icons-sharp">logout</span>Log Out</a>
             </div>
         </div>
 
@@ -86,7 +86,7 @@
                         <th>GameDay</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="dashboard-item">
                     <!-- Rows will be dynamically inserted here -->
                 </tbody>
             </table>
@@ -98,148 +98,38 @@
             <!-------------------- Config Page ----------------------->
             <div id="config" class="page">
                 <nav class="config-nav">
-                    <li class="config-btn" data-config="winners">Winners</li>
-                    <li class="config-btn" data-config="prizes">Prizes</li>
-                    <li class="config-btn" data-config="themes">Themes</li>
+                    <li class="config-btn" data-config="winners.html">Winners</li>
+                    <li class="config-btn" data-config="prizes.html">Prizes</li>
+                    <li class="config-btn" data-config="themes.html">Themes</li>
                 </nav>
-                <div class="config-content">
+                <div class="config-content" id="content-container">
+                    <!-- Loaded content will appear here -->
+                </div>
+            </div>
 
 
                 <!---- Winners Page ---->
 
-                    <div id="winners" class="config-page">
-                        <h3>Winner Selection</h3>
-                        <form class="winner-form">
-                            <!-- Number Range Inputs -->
-                            <div class="form-group1">
-                                <label for="min-number">Minimum Number</label>
-                                <input type="number" id="min-number" placeholder="Enter minimum number">
-                            </div>
                     
-                            <div class="form-group1">
-                                <label for="max-number">Maximum Number</label>
-                                <input type="number" id="max-number" placeholder="Enter maximum number">
-                            </div>
-                    
-                            <!-- Number of Winners -->
-                            <div class="form-group1">
-                                <label for="number-of-winners">Number of Winners</label>
-                                <input type="number" id="number-of-winners" placeholder="Enter number of winners" value="1">
-                            </div>
-                    
-                            <!-- Button to Select Winners -->
-                            <button type="button" id="select-winners-btn">Select Winners</button>
-                        </form>
-                    
-                        <!-- Display Selected Winners -->
-                        <div id="winner-results" class="winner-results">
-                            <h4>Selected Winners</h4>
-                            <ul id="winner-list"></ul>
-                        </div>
-                    </div>
 
 
 
                 <!-- Prizes Page -->
                     
-                    <div id="prizes" class="config-page">
-                        <form action="post" id="registerPrice">
-                            <div class="forme">
-                                <div>
-                                    <label>Set Prizes:</label>                              
-                                </div>
-                                <div>
-                                    <input id="name" class="prize-input" type="text" name="name" required>
-                                </div> 
-                            </div>
-                                <div class="forme">
-                                    <div>
-                                        <label>Number of Prizes:</label>
-                                    </div>
-                                    <div>
-                                        <input id="number_price" class="prize-input" type="number" name="number_price" required>
-                                    </div>     
-                                </div>
-                                <div class="forme">
-                                    <div><label>Upload image</label></div>
-                                    <div><input id="img" class="prize-input fils" type="file" name="img" required></div>
-                                </div>
-                                <div class="forme">
-                                    <div></div><br>
-                                    <div>
-                                        <button class="buto" type="submit"> Enregistrer</button>
-                                    </div>
-                                </div>
-                        </form>
-                    </div>
                     
-                    
-                        <h3 id="prizesListTitle" style="display: none;">Prizes List:</h3>
-                        <table class="users-table" id="prizesTable" style="display: none;">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Number of Prizes</th>
-                                    <th>Image Source</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Prize data will be appended here -->
-                            </tbody>
-                        </table>
-                    </div>          
                     
 
 
 
                 <!-- Themes Page -->
-                    <div id="themes" class="config-page">
-                        <h3>Theme Configuration</h3>
-                        <form class="theme-form">
-                            <!-- Background Image Upload -->
-                            <div class="form-group">
-                                <label>Background Image</label>
-                                <input type="file" id="background-image" accept="image/*">
-                                <img id="preview-background-image" class="preview-image" src="#" alt="No image selected" style="display:none;">
-                            </div>
+                    
 
-                            <!-- Logo Image Upload -->
-                            <div class="form-group">
-                                <label>Logo Image</label>
-                                <input type="file" id="logo-image" accept="image/*">
-                                <img id="preview-logo-image" class="preview-image" src="#" alt="No image selected" style="display:none;">
-                            </div>
-
-                            <!-- Cover Image Upload -->
-                            <div class="form-group">
-                                <label>Cover Image</label>
-                                <input type="file" id="cover-image" accept="image/*">
-                                <img id="preview-cover-image" class="preview-image" src="#" alt="No image selected" style="display:none;">
-                            </div>
-
-                            <!-- Scratch Lose Image Upload -->
-                            <div class="form-group">
-                                <label>Scratch Lose Image</label>
-                                <input type="file" id="scratch-lose-image" accept="image/*">
-                                <img id="preview-scratch-lose-image" class="preview-image" src="#" alt="No image selected" style="display:none;">
-                            </div>
-
-                            <!-- Scratch Win Image Upload -->
-                            <div class="form-group">
-                                <label>Scratch Win Image</label>
-                                <input type="file" id="scratch-win-image" accept="image/*">
-                                <img id="preview-scratch-win-image" class="preview-image" src="#" alt="No image selected" style="display:none;">
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div> 
-    </div>
-
-    <script src="script.js"></script>
-    
+    <script src="scripts/script.js"></script>
+    <script src="scripts/winners.js"></script>
+    <script src="scripts/prizes.js"></script>
+    <script src="scripts/themes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
 
 </body>
 </html>

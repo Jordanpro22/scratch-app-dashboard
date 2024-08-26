@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="winners" class="config-page active">
+        <h3>Winner Selection</h3>
+        <form class="winner-form">
+            <!-- Number Range Inputs -->
+            <div class="form-group1">
+                <label for="min-number">Minimum Number</label>
+                <input type="number" id="min-number" placeholder="Enter minimum number">
+            </div>
+    
+            <div class="form-group1">
+                <label for="max-number">Maximum Number</label>
+                <input type="number" id="max-number" placeholder="Enter maximum number">
+            </div>
+    
+            <!-- Number of Winners -->
+            <div class="form-group1">
+                <label for="number-of-winners">Number of Winners</label>
+                <input type="number" id="number-of-winners" placeholder="Enter number of winners" value="1">
+            </div>
+    
+            <!-- Button to Select Winners -->
+            <button type="button" id="select-winners-btn">Select Winners</button>
+        </form>
+    
+        <!-- Display Selected Winners -->
+        <div id="winner-results" class="winner-results">
+            <h4>Selected Winners</h4>
+            <ul id="winner-list"></ul>
+        </div>
+    </div>
+
+
+</body>
+<script src="scripts/script.js"></script>
+<script src="scripts/winners.js"></script>
+</html>
