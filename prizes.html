@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="prizes" class="config-page active">
+        <form action="post" id="registerPrice">
+            <div class="forme">
+                <div>
+                    <label>Set Prizes:</label>                              
+                </div>
+                <div>
+                    <input id="name" class="prize-input" type="text" name="name" required>
+                </div> 
+            </div>
+                <div class="forme">
+                    <div>
+                        <label>Number of Prizes:</label>
+                    </div>
+                    <div>
+                        <input id="number_price" class="prize-input" type="number" name="number_price" required>
+                    </div>     
+                </div>
+                <div class="forme">
+                    <div><label>Upload image</label></div>
+                    <div><input id="img" class="prize-input fils" type="file" name="img" required></div>
+                </div>
+                <div class="forme">
+                    </div>
+                    <div>
+                        <button class="buto" type="submit"> Enregistrer</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+    
+    <div class="prizesTableContainer" id="prizesTableContainer" style="display: none;">
+        <h3 id="prizesListTitle" style="display: none;">Prizes List:</h3>
+        <table class="users-table" id="prizesTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number of Prizes</th>
+                    <th>Image Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Prize data will be appended here -->
+            </tbody>
+        </table>
+    </div>
+    </div>          
+
+</body>
+<script src="scripts/script.js"></script>
+<script src="scripts/prizes.js"></script>
+</html>
