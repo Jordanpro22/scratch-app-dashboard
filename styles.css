@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Articulat-CF';
     src: url('fonts/Fontspring-DEMO-articulatcf-normal-BF64a38d8b0cbaf.otf') format('woff2'),
@@ -69,7 +70,7 @@ body, html {
 .search-bar input[type="text"]::placeholder {
     font-size: 14px;
     line-height: 20px;
-    color: #5a5555;
+    color: #5E5E5E;
 }
 
 /* Sidebar */
@@ -86,7 +87,6 @@ body, html {
     padding: 32px 0px 32px 0px;
     position: fixed;
     top: 56px; 
-    /* border: yellow 5px solid; */
     
 }
 
@@ -118,7 +118,6 @@ nav ul {
 }
 
 .icon {
-    position: relative;
     padding-right: 10px;
     margin-top: 10px;
 }
@@ -134,7 +133,6 @@ nav ul {
 .logout {
     text-align: center;
     margin-bottom: 100px;
-    
 }
 
 .logout a {
@@ -150,9 +148,8 @@ nav ul {
     padding: 80px 20px 20px 20px; /* Adjusted padding to account for the fixed top header */
     overflow-y: auto;
     position: relative;
-    margin-left: 300px;
     top: 1cm; /* Start below the top header */
-    /* border: red 5px solid; */
+    margin-left: 300px;
 }
 
 .page {
@@ -179,6 +176,9 @@ nav ul {
     width: 25%;
     height: 100px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-size: 21px;
     border-radius: 5px;
@@ -258,18 +258,14 @@ nav ul {
    font-size: 19px;
     color: #FAC30F;
 }
-.forme label{
-    color: black;
-    font-size: 25px;
-}
 
 .winner-input, .prize-input {
-    width: 100%;
-    height: 30px;
+    width: 25%;
+    padding: 8px;
     border-radius: 8px;
-    border: #242424 solid 2px;
+    border: none;
     color: #bab5b5;
-    background-color: #ECF0F1;
+    background-color: #363949;
 }
 .config-content {
     background-color: #ecf0f1;
@@ -345,32 +341,6 @@ button#select-winners-btn:hover {
 
 
 
-/* Theme Form Styles */
-.theme-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form-group label {
-    font-weight: bold;
-    font-size: 19px;
-    color: rgb(51, 46, 46);
-    font-size: 16px;
-}
-
-.form-group input[type="file"] {
-    padding: 5px;
-    font-size: 16px;
-}
-/* --------------------------------formulair prize------------------------------------------------------------------- */
-
 
 #registerPrice{
     display: flex;
@@ -416,6 +386,33 @@ button#select-winners-btn:hover {
     font-size: 20px; /* Font size for the text */
     color: #242424;
 }
+
+
+/* Theme Form Styles */
+.theme-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 19px;
+    color: rgb(51, 46, 46);
+    font-size: 16px;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
 
 
 
