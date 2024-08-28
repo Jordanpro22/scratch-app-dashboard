@@ -109,9 +109,9 @@ window.onload = () => {
 
 
 
- 
 
 ///////////////// USERS PAGE //////////////////////
+
 
 
 async function fetchUsers() {
@@ -148,7 +148,7 @@ async function fetchUsers() {
             row.appendChild(createCell(user.location_patenaire));
             row.appendChild(createCell(user.montant_commande));
             row.appendChild(createCell(user.carimo_product));
-            row.appendChild(createCell(user.isWinner ? "Yes" : "No"));
+            row.appendChild(createCell(user.isWinner ? "No" : "Yes"));
             row.appendChild(createCell(user.createdAt));
 
             tableBody.appendChild(row);
@@ -161,21 +161,15 @@ async function fetchUsers() {
 
 fetchUsers();
 
+/////////////////// FUNCTION TO EXPORT TABLE IN EXCEL ///////////
 
+function exportTableToExcel(tableID, filename = '') {
+    const table = document.getElementById(tableID);
+    const wb = XLSX.utils.table_to_book(table, {sheet: "Sheet1"});
+    return XLSX.writeFile(wb, filename || ('Users_List_' + new Date().toISOString().slice(0,10) + '.xlsx'));
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.querySelector('.export-btn').addEventListener('click', () => {
+    exportTableToExcel('usersTable', 'Users_List.xlsx');
+});
 

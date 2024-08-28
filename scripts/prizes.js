@@ -43,25 +43,56 @@ async function fetchPrizes() {
 
         const tableBody = document.querySelector("#prizesTable tbody");
         tableBody.innerHTML = ""; 
+
         prizes.forEach(prize => {
             const row = document.createElement("tr");
 
+            // Name cell
             const nameCell = document.createElement("td");
             nameCell.textContent = prize.name;
             row.appendChild(nameCell);
 
+            // Number of prizes cell
             const numberCell = document.createElement("td");
             numberCell.textContent = prize.number_price;
             row.appendChild(numberCell);
 
+            // Image source cell
             const imgCell = document.createElement("td");
             imgCell.textContent = prize.img; // Display image source
             row.appendChild(imgCell);
+
+            // Delete button cell
+            const deleteCell = document.createElement("td");
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", () => deletePrize(prize._id, row));
+            deleteCell.appendChild(deleteButton);
+            row.appendChild(deleteCell);
 
             tableBody.appendChild(row);
         });
     } catch (error) {
         alert("Une erreur s'est produite lors de la récupération des données des prix.");
+    }
+}
+
+async function deletePrize(prizeId, tableRow) {
+    if (confirm("Are you sure you want to delete this prize?")) {
+        try {
+            const response = await fetch(`http://localhost:4000/price/${prizeId}`, {
+                method: "DELETE"
+            });
+
+            if (response.ok) {
+                tableRow.remove(); // Remove the row from the table
+                alert("Prize deleted successfully.");
+            } else {
+                alert("Failed to delete prize.");
+            }
+        } catch (error) {
+            alert("An error occurred while trying to delete the prize.");
+        }
     }
 }
 
