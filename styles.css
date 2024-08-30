@@ -296,7 +296,31 @@ nav ul {
     transform: translateY(0);
 }
 
-/* Winner Form Styles */
+/*/////////////// Winner Form Styles ///////////////*/
+
+#winnerRowsContainer {
+    margin-top: 20px;
+}
+
+.winner-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.winner-row input {
+    width: 45%;
+    padding: 8px;
+}
+
+#winnerRowsContainer button {
+    margin-top: 20px;
+}
+
+#selectedWinnersContainer {
+    margin-top: 20px;
+}
+
 .winner-form {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -307,6 +331,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     gap: 2px;
+   
 }
 
 .form-group1 label {
@@ -315,16 +340,17 @@ nav ul {
 }
 
 .form-group1 input[type="number"] {
-    width: 45%;
+    width: 25%;
     padding: 8px;
     border-radius: 8px;
     outline: none;
     border: 2px solid #1C1C1C;
     color: #1C1C1C;
     background-color: transparent;
+    margin-bottom: 20px;
 }
 
-button#select-winners-btn {
+button#generateRows {
     padding: 10px;
     background-color:#1C1C1C;
     width: 250px;
@@ -336,7 +362,7 @@ button#select-winners-btn {
     transition: 0.8s;
 }
 
-button#select-winners-btn:hover {
+button#generateRows:hover {
     background-color: #3e3d3d;
     scale: 0.9;
     transition: 0.8s;
@@ -407,7 +433,7 @@ button#select-winners-btn:hover {
 
 
 
-/* Theme Form Styles */
+/*////////////// Theme Form Styles ///////////////////*/
 .theme-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -448,8 +474,7 @@ button#select-winners-btn:hover {
     font-size: 16px;
     width: 45%;
     border-radius: 8px;
-    border: 2px solid #1C1C1C;
-    border-style: dotted;
+    border: 2px dotted #1C1C1C;
     color: black;
     background-color: transparent;
     content: 'select image';
@@ -457,6 +482,14 @@ button#select-winners-btn:hover {
 
 ::file-selector-button {
     display: none;
+  }
+
+  .customFileInput::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  
+  .customFileInput::before {
+    content: 'your wording';
   }
 
 

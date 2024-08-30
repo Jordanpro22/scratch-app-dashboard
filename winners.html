@@ -7,38 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div id="winners" class="config-page active">
-        <h3>Winner Selection</h3>
-        <form class="winner-form">
-            <!-- Number Range Inputs -->
-            <div class="form-group1">
-                <label for="min-number">Minimum Number</label>
-                <input type="number" id="min-number" placeholder="Enter minimum number">
-            </div>
+        <h3>Random Winner Selector</h3>
+        
+        <!-- Field to enter the number of winners -->
+        <div class="form-group1">
+        <label for="numWinners">Enter the number of winners:</label>
+        <input type="number" id="numWinners" min="1" placeholder="Number of Winners">
+        <button id="generateRows">Generate Rows</button>
+        </div>
     
-            <div class="form-group1">
-                <label for="max-number">Maximum Number</label>
-                <input type="number" id="max-number" placeholder="Enter maximum number">
-            </div>
+        <!-- Container for the generated rows -->
+        <div id="winnerRowsContainer"></div>
+        
+        <!-- Buttons to select winners, reset, and delete rows -->
+        <button class="export-btn" id="selectWinners" style="display: none;">Select Winners</button>
+        <button class="export-btn" id="resetRows" style="display: none;">Reset Rows</button>
+        <button class="export-btn" id="deleteRows" style="display: none;">Delete Rows</button>
     
-            <!-- Number of Winners -->
-            <div class="form-group1">
-                <label for="number-of-winners">Number of Winners</label>
-                <input type="number" id="number-of-winners" placeholder="Enter number of winners" value="1">
-            </div>
-    
-            <!-- Button to Select Winners -->
-            <button type="button" id="select-winners-btn">Select Winners</button>
-        </form>
-    
-        <!-- Display Selected Winners -->
-        <div id="winner-results" class="winner-results">
-            <h4>Selected Winners</h4>
-            <ul id="winner-list"></ul>
+        <!-- Display the randomly selected numbers -->
+        <div id="selectedWinnersContainer" style="display: none;">
+            <h4>Selected Winners:</h4>
+            <ul id="selectedWinnersList"></ul>
         </div>
     </div>
+    
 
-
+    
+    
+            
+    
 </body>
 <script src="scripts/script.js"></script>
 <script src="scripts/winners.js"></script>
